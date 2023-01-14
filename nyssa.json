@@ -1,0 +1,19 @@
+{
+  "name": "tar", 
+  "version": "1.0.0", 
+  "description": "Pure Blade library for creating and extracting TAR archives.", 
+  "homepage": "", 
+  "tags": [
+    "tar", 
+    "archive", 
+    "extract", 
+    "blade", 
+    "gzip"
+  ], 
+  "author": "Richard Ore <eqliqandfriends@gmail.com>", 
+  "license": "MIT", 
+  "sources": [
+    "https://nyssa.bladelang.com"
+  ], 
+  "deps": {}
+}
