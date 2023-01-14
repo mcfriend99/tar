@@ -2,7 +2,7 @@
   "name": "tar", 
   "version": "1.0.0", 
   "description": "Pure Blade library for creating and extracting TAR archives.", 
-  "homepage": "", 
+  "homepage": "https://github.com/mcfriend99/tar.git", 
   "tags": [
     "tar", 
     "archive", 
