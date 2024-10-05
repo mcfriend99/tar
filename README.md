@@ -16,7 +16,7 @@ Pure Blade library for creating and extracting TAR archives.
 ## Installation
 ---
 
-You can install the tar library with [Nyssa package manager](https://nyssa.bladelang.com)
+You can install the tar library with [Nyssa package manager](https://nyssa.bladelang.org )
 
 ```
 nyssa install tar
