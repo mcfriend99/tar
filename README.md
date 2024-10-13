@@ -25,9 +25,9 @@ nyssa install tar
 
 ## Important
 
-The library exports two helper function `compress()` and `extract()` by that allows you to create and/or extract TAR archives. Note that this library does not yet support TAR archives compressed with the bzip2 algorithm (typically files ending in `.bz2` and `.tbz`).
+The library exports two helper functions, `compress()` and `extract()`, which allow you to create and extract TAR archives. Note that this library does not yet support TAR archives compressed with the bzip2 algorithm (typically files ending in `.bz2` and `.tbz`).
 
-This library supports the most popular extensions such as `.tar.gz`, `.tar`, `.gz`, and `.tgz`.
+This library supports the most popular extensions, such as `.tar.gz`, `.tar`, `.gz`, and `.tgz`.
 
 
 ## Extracting TAR archives
@@ -41,15 +41,15 @@ import tar
 tar.extract('/path/to/archive.tar.gz', '/destination')
 ```
 
-The destination can be omitted in which case the archive will be extracted into the same directory as the source with same name without the last extension. e.g. for `/path/to/file.tar.gz` will extract to `/path/to/file.tar` directory is the destination is not given.
+The destination can be omitted - in which case the archive will be extracted into the same directory as the source with a matching name, e.g. `/path/to/file.tar.gz` will extract to `/path/to/file.tar`.
 
-_See below for learn more about the `extract()` method_
+_See below to learn more about the `extract()` method_
 
 
 ## Creating a new TAR ball
 ---
 
-To quickly create a new tarball, you can use the `compress()` helper function in the library like this,
+To quickly create a new tarball, you can use the `compress()` helper function in the library like this:
 
 ```
 import tar
@@ -57,9 +57,9 @@ import tar
 tar.compress('/path/to/file/or/directory', '/destination.tar.gz')
 ```
 
-The compress function can be used to compress a single file or an entire directory. Like the `extract()` function, you can choose to omit the destination parameter in which case compress will save the file to the current working directory with the same name as the file/directory with the extension `.tar.gz`.
+The compress function can be used to compress a single file or an entire directory. As with the `extract()` function, you can choose to omit the destination parameter - in which case the destination will be set to the current working directory with the same name as the target file/directory and the extension `.tar.gz`.
 
-_See below for learn more about the `compress()` method_
+_See below to learn more about the `compress()` method_
 
 
 ## API Definition
@@ -79,7 +79,7 @@ For a more fine grained control and to create TAR archives from scratch while ad
 - `compress(path: string, destination: string = ')`
   
   Create a new TAR ball from the file or directory in the given path and saves it to the destination
-  path or `${NAME_OF_FILE}.tar.gz` in the current directory if the destination is not given.
+  path, or `${NAME_OF_TARGET}.tar.gz` in the current working directory if the destination is not given.
 
   - **@param** *string* `path` the file or directory that will be compressed.
   - **@param** *string* `destination` the destination of the compressed TAR ball.
@@ -182,7 +182,7 @@ Creates or extracts TAR archives with long pathnames (> 100 characters) support 
   Add a file to the current Tar using an existing file in the filesystem
   
   - **@param** *string* `path`         path to the original file
-  - **@param** *string|dict* `header`  either the name to use in Tar (string) or a dictionary oject with all meta data, empty to take from original
+  - **@param** *string|dict* `header`  either the name to use in Tar (string) or a dictionary object with all metadata - leave empty to take from original
   - **@throws** *TarIOException*
   
   **NOTE:** If the header is a dictionary, it must conform to the format defined above in `content()`.
@@ -194,7 +194,7 @@ Creates or extracts TAR archives with long pathnames (> 100 characters) support 
   If the header is set to nil or empty string, a file called `Untitled-{CURRENT_TIMESTAMP}` will be created.
   
   - **@param** *bytes* `bytes`     binary content of the file to add
-  - **@param** *string|dict* `header` either the name to us in Tar (string) or a dictionary oject with all meta data
+  - **@param** *string|dict* `header` either the name to us in Tar (string) or a dictionary object with all metadata
   - **@throws** *TarIOException*
 
 
